@@ -10,10 +10,12 @@ const ListItem = ({contact, onPress}) => {
 
   const fullName = `${capitalizeFirstLetter(contact.name.first)} `+
                    `${capitalizeFirstLetter(contact.name.last)}`;
+  const arrowForward = Platform.OS === 'ios' ? 'ios-arrow-forward' : 'md-arrow-forward';
 
   return (
     <TouchableHighlight
       onPress={onPress}
+      underlayColor={colors.rowUnderlay}
     >
       <View style={styles.row}>
         <Image
@@ -26,7 +28,7 @@ const ListItem = ({contact, onPress}) => {
         </View>
         <View style={styles.chevronContainer}>
           <Icon
-            name="ios-arrow-forward"
+            name={arrowForward}
             size={CHEVRON_SIZE}
             color={colors.subtleText}
             style={styles.chevron}
