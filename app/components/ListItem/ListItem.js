@@ -20,11 +20,18 @@ const ListItem = ({contact, onPress}) => {
           source={{uri: contact.picture.thumbnail}}
           style={styles.avatar}
         />
-        <View>
+        <View style={styles.nameContainer}>
           <Text style={styles.name}>{fullName}</Text>
           <Text style={styles.email}>{contact.email}</Text>
         </View>
-
+        <View style={styles.chevronContainer}>
+          <Icon
+            name="ios-arrow-forward"
+            size={CHEVRON_SIZE}
+            color={colors.subtleText}
+            style={styles.chevron}
+          />
+        </View>
       </View>
     </TouchableHighlight>
   );
