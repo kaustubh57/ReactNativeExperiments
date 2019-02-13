@@ -31,7 +31,10 @@ export default StyleSheet.create({
     backgroundColor: colors.grayBackground
   },
   actionRow: {
-
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 20
   },
   actionInfo: {
 
