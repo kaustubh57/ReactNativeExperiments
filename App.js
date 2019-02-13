@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import Contacts from "./app/screens/Contacts";
+import React, { Component } from 'react';
+import AppNavigator from './app/config/router';
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <Contacts/>
+      <AppNavigator/>
     );
   }
 }
