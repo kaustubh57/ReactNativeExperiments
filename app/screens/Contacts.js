@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, View, Text, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'
+import { FlatList, View } from 'react-native';
 
 import { contacts } from "../config/data";
 import colors from '../config/colors';
@@ -9,7 +8,7 @@ import ListItem from "../components/ListItem/ListItem";
 class Contacts extends Component {
 
   handleRowPress = contact => {
-
+    this.props.navigation.navigate('Details', contact);
   };
 
   render() {
