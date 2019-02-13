@@ -4,6 +4,7 @@ import colors from '../../config/colors'
 
 const window = Dimensions.get('window');
 
+export const ICON_SIZE = 25;
 export default StyleSheet.create({
   image: {
     width: window.width / 2,
@@ -19,5 +20,21 @@ export default StyleSheet.create({
     fontSize: 22,
     marginTop: 10,
     color: colors.primaryText
+  },
+
+  actionContainer: {
+
+  },
+  actionRow: {
+
+  },
+  actionInfo: {
+
+  },
+  actionLabel: {
+
+  },
+  actionBody: {
+
   }
 });
