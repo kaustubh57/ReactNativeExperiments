@@ -23,7 +23,12 @@ export default StyleSheet.create({
   },
 
   actionContainer: {
-
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderTopColor: colors.border,
+    borderBottomColor: colors.border,
+    paddingVertical: 15,
+    backgroundColor: colors.grayBackground
   },
   actionRow: {
 

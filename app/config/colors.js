@@ -5,5 +5,5 @@ export default {
   link: '#007AFF', // TODO: Differentiate between platform?
   border: '#cccccc',
   grayBackground: '#f9fafb',
-  rowUnderlay: 'rgba(154, 154, 154, 0.25)',
+  rowUnderlay: 'rgba(154, 154, 154, 0.25)'
 };
