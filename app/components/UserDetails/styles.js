@@ -37,12 +37,16 @@ export default StyleSheet.create({
     paddingHorizontal: 20
   },
   actionInfo: {
-
+    flexDirection: 'column'
   },
   actionLabel: {
-
+    fontSize: 12,
+    color: colors.subtleText,
+    marginBottom: 3
   },
   actionBody: {
-
+    fontSize: 16,
+    color: colors.primaryText,
+    marginBottom: 5
   }
 });
