@@ -35,5 +35,5 @@ export default StyleSheet.create({
   },
   chevron: {
     alignSelf: 'flex-end'
-  },
+  }
 });
