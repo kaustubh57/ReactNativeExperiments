@@ -48,5 +48,11 @@ export default StyleSheet.create({
     fontSize: 16,
     color: colors.primaryText,
     marginBottom: 5
+  },
+  actionIcons: {
+    flexDirection: 'row'
+  },
+  actionIcon: {
+    marginLeft: 13
   }
 });
