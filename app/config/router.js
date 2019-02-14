@@ -1,10 +1,13 @@
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation';
+import Icon from 'react-native-vector-icons/Ionicons'
 
 import { capitalizeFirstLetter } from "../helpers/string";
 import Contacts from '../screens/Contacts';
 import Details from '../screens/Details';
+import NewContact from '../screens/NewContact';
+import Me from '../screens/Me';
 
-const AppNavigator = createStackNavigator(
+const ContactNavigator = createStackNavigator(
   {
     Contacts: {
       screen: Contacts,
@@ -25,4 +28,16 @@ const AppNavigator = createStackNavigator(
   }
 );
 
-export default createAppContainer(AppNavigator);
+const TabNavigator = createBottomTabNavigator({
+  Contact: {
+    screen: ContactNavigator
+  },
+  NewContact: {
+    screen: NewContact
+  },
+  Me: {
+    screen: Me
+  },
+});
+
+export default createAppContainer(TabNavigator);
