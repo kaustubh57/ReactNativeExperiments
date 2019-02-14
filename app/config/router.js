@@ -7,7 +7,7 @@ import Details from '../screens/Details';
 import NewContact from '../screens/NewContact';
 import Me from '../screens/Me';
 
-const ContactNavigator = createStackNavigator(
+const ContactStackNavigator = createStackNavigator(
   {
     Contacts: {
       screen: Contacts,
@@ -29,14 +29,23 @@ const ContactNavigator = createStackNavigator(
 );
 
 const TabNavigator = createBottomTabNavigator({
-  Contact: {
-    screen: ContactNavigator
+  Contacts: {
+    screen: ContactStackNavigator,
+    navigationOptions: {
+      tabBarLabel: 'Contacts'
+    }
   },
   NewContact: {
-    screen: NewContact
+    screen: NewContact,
+    navigationOptions: {
+      tabBarLabel: 'New Contact'
+    }
   },
   Me: {
-    screen: Me
+    screen: Me,
+    navigationOptions: {
+      tabBarLabel: 'Me'
+    }
   },
 });
 
