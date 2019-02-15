@@ -8,12 +8,12 @@ import Details from '../screens/Details';
 import NewContact from '../screens/NewContact';
 import Me from '../screens/Me';
 
-const ContactStackNavigator = createStackNavigator(
+export const ContactStackNavigator = createStackNavigator(
   {
     Contacts: {
       screen: Contacts,
       navigationOptions: {
-        title: 'Contacts',
+        title: "Contacts",
       }
     },
     Details: {
@@ -29,25 +29,47 @@ const ContactStackNavigator = createStackNavigator(
   }
 );
 
+export const NewContactStack = createStackNavigator(
+  {
+    NewContact: {
+      screen: NewContact,
+      navigationOptions: {
+        title: "New Contact"
+      }
+    }
+  }
+);
+
+export const MeStack = createStackNavigator(
+  {
+    Me: {
+      screen: Me,
+      navigationOptions: {
+        title: "Me"
+      }
+    }
+  }
+);
+
 const TabNavigator = createBottomTabNavigator({
   Contacts: {
     screen: ContactStackNavigator,
     navigationOptions: {
-      tabBarLabel: 'Contacts',
+      tabBarLabel: "Contacts",
       tabBarIcon: ({ tintColor }) => <Icon name="ios-list" size={35} color={tintColor}/>
     }
   },
   NewContact: {
-    screen: NewContact,
+    screen: NewContactStack,
     navigationOptions: {
-      tabBarLabel: 'New Contact',
+      tabBarLabel: "New Contact",
       tabBarIcon: ({ tintColor }) => <Icon name="ios-add" size={35} color={tintColor}/>
     }
   },
   Me: {
-    screen: Me,
+    screen: MeStack,
     navigationOptions: {
-      tabBarLabel: 'Me',
+      tabBarLabel: "Me",
       tabBarIcon: ({ tintColor }) => <Icon name="ios-contact" size={35} color={tintColor}/>
     }
   },
