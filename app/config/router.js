@@ -1,3 +1,4 @@
+import React from 'react';
 import { createStackNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons'
 
@@ -32,19 +33,22 @@ const TabNavigator = createBottomTabNavigator({
   Contacts: {
     screen: ContactStackNavigator,
     navigationOptions: {
-      tabBarLabel: 'Contacts'
+      tabBarLabel: 'Contacts',
+      tabBarIcon: ({ tintColor }) => <Icon name="ios-list" size={35} color={tintColor}/>
     }
   },
   NewContact: {
     screen: NewContact,
     navigationOptions: {
-      tabBarLabel: 'New Contact'
+      tabBarLabel: 'New Contact',
+      tabBarIcon: ({ tintColor }) => <Icon name="ios-add" size={35} color={tintColor}/>
     }
   },
   Me: {
     screen: Me,
     navigationOptions: {
-      tabBarLabel: 'Me'
+      tabBarLabel: 'Me',
+      tabBarIcon: ({ tintColor }) => <Icon name="ios-contact" size={35} color={tintColor}/>
     }
   },
 });
