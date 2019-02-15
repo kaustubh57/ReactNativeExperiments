@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-native';
+import { Platform } from 'react-native';
 import {
   createStackNavigator,
   createAppContainer,
@@ -8,19 +8,29 @@ import {
 } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons'
 
-import { capitalizeFirstLetter } from "../helpers/string";
 import Contacts from '../screens/Contacts';
 import Details from '../screens/Details';
 import NewContact from '../screens/NewContact';
 import Me from '../screens/Me';
 
+import { capitalizeFirstLetter } from "../helpers/string";
+import DrawerButton from '../components/Header/DrawerButton'
+
+const LeftDrawerButton = ({ navigation }) => {
+  if (Platform.OS === 'android') {
+    return <DrawerButton onPress={() => navigation.openDrawer()}/>;
+  }
+
+  return null;
+};
+
 export const ContactStackNavigator = createStackNavigator(
   {
     Contacts: {
       screen: Contacts,
-      navigationOptions: ({ navigation }) => ({
+      navigationOptions: (props) => ({
         title: "Contacts",
-        headerLeft: <Button title="Open" onPress={() => navigation.openDrawer()}/>
+        headerLeft: <LeftDrawerButton {...props} />
       })
     },
     Details: {
@@ -40,9 +50,9 @@ export const NewContactStack = createStackNavigator(
   {
     NewContact: {
       screen: NewContact,
-      navigationOptions: ({ navigation }) => ({
+      navigationOptions: (props) => ({
         title: "New Contact",
-        headerLeft: <Button title="Open" onPress={() => navigation.openDrawer()}/>
+        headerLeft: <LeftDrawerButton {...props} />
       })
     }
   }
@@ -52,9 +62,9 @@ export const MeStack = createStackNavigator(
   {
     Me: {
       screen: Me,
-      navigationOptions: ({ navigation }) => ({
-        title: "me",
-        headerLeft: <Button title="Open" onPress={() => navigation.openDrawer()}/>
+      navigationOptions: (props) => ({
+        title: "Me",
+        headerLeft: <LeftDrawerButton {...props} />
       })
     }
   }
@@ -96,7 +106,7 @@ const DrawerNavigator = createDrawerNavigator(
       screen: ContactStackNavigator,
       navigationOptions: {
         drawerLabel: "New Contact",
-        drawerIcon: ({ tintColor }) => <Icon name="ios-list" size={25} color={tintColor}/>
+        drawerIcon: ({ tintColor }) => <Icon name="ios-list" size={22} color={tintColor}/>
       }
 
     },
@@ -104,14 +114,14 @@ const DrawerNavigator = createDrawerNavigator(
       screen: NewContactStack,
       navigationOptions: {
         drawerLabel: "New Contact",
-        drawerIcon: ({ tintColor }) => <Icon name="ios-add" size={25} color={tintColor}/>
+        drawerIcon: ({ tintColor }) => <Icon name="ios-add" size={22} color={tintColor}/>
       }
     },
     Me: {
       screen: MeStack,
       navigationOptions: {
         drawerLabel: "Me",
-        drawerIcon: ({ tintColor }) => <Icon name="ios-contact" size={25} color={tintColor}/>
+        drawerIcon: ({ tintColor }) => <Icon name="ios-contact" size={22} color={tintColor}/>
       }
     }
   },
@@ -121,4 +131,5 @@ const DrawerNavigator = createDrawerNavigator(
   }
 );
 
-export default createAppContainer(DrawerNavigator);
+export const IosNavigator = createAppContainer(TabNavigator);
+export const AndroidNavigator = createAppContainer(DrawerNavigator);
