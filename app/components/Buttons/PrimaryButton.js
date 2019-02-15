@@ -5,11 +5,12 @@ import styles from './styles';
 
 const PrimaryButton = ({ label, onPress }) => {
   return (
-    <View>
+    <View style={styles.primaryButtonContainer}>
       <TouchableOpacity
         onPress={() => onPress()}
+        style={styles.primaryButton}
       >
-        <Text>{label}</Text>
+        <Text style={styles.primaryButtonText}>{label}</Text>
       </TouchableOpacity>
     </View>
   );
