@@ -30,10 +30,26 @@ export default StyleSheet.create({
   },
   separator: {},
   chevronContainer: {
-    justifyContent: 'flex-end',
-    // flexGrow: 1
+    justifyContent: 'flex-end'
   },
   chevron: {
     alignSelf: 'flex-end'
+  },
+
+  leftAction: {
+    flex: 1,
+    backgroundColor: '#497AFC',
+    justifyContent: 'center'
+  },
+  actionText: {
+    color: 'white',
+    fontSize: 16,
+    backgroundColor: 'transparent',
+    padding: 10,
+  },
+  rightAction: {
+    alignItems: 'center',
+    flex: 1,
+    justifyContent: 'center',
   }
 });
